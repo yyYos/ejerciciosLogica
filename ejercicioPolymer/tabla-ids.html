@@ -1,0 +1,39 @@
+<link rel="import" href="./bower_components/polymer/polymer-element.html">
+
+<dom-module id="tabla-ids">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <ul>
+        <li id="C1" dada-id="US" data-dial-code="1">USA</li>
+        <li id="C2" dada-id="CA" data-dial-code="1">Canada</li>
+        <li id="C3" dada-id="FF" data-dial-code="1">France</li>
+    </ul>
+  </template>
+
+  <script>
+    class TablaIds extends Polymer.Element {
+      static get is() { return 'tabla-ids'; }
+      static get properties() {
+        return {
+        };
+      }
+
+      alertClick(){
+        let ulUno = document.querySelectorAll('ul > li');
+        
+            ulUno.addEventListener('click', function(){
+                let idAtr = this.getAttribute("id");
+                let isoId = this.getAttribute("dada-id");
+                let dialCode = this.getAttribute("data-dial-code");
+                alert(`ID elemento ${idAtr} ISO ID: ${isoId} Dial Code: ${dialCode}`);
+            })
+        };
+    }
+
+    window.customElements.define(TablaIds.is, TablaIds);
+  </script>
+</dom-module>

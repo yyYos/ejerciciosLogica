@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicios seis</title>
+</head>
+<body>
+        <ul>
+            <li id="C1" dada-id="US" data-dial-code="1">USA</li>
+            <li id="C2" dada-id="CA" data-dial-code="1">Canada</li>
+            <li id="C3" dada-id="FF" data-dial-code="1">France</li>
+        </ul>
+    <script>
+        function alertClick(){
+        let ulUno = document.querySelectorAll('ul > li');
+        
+            ulUno.addEventListener('click', function(){
+                let idAtr = this.getAttribute("id");
+                let isoId = this.getAttribute("dada-id");
+                let dialCode = this.getAttribute("data-dial-code");
+                alert(`ID elemento ${idAtr} ISO ID: ${isoId} Dial Code: ${dialCode}`);
+            })
+        };
+        
+        alertClick();
+    </script>
+</body>
+</html>
